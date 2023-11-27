@@ -5,7 +5,7 @@ app.use(cors());
 
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "https://video-meeting-client-ivv6.vercel.app/",
+		origin: "*",
 		methods: [ "GET", "POST" ]
 	}
 });
