@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "*",
+		origin: "https://video-meeting-client-ivv6.vercel.app/",
 		methods: [ "GET", "POST" ]
 	}
 });
@@ -18,7 +18,6 @@ app.get('/', (req, res) => {
 });
 
 io.on("connection", (socket) => {
-	console.log('test',socket.id);
 	socket.emit("me", socket.id);
 
 	socket.on("disconnect", () => {
